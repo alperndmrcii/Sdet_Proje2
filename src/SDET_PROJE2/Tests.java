@@ -1,4 +1,5 @@
 package SDET_PROJE2;
+
 import Utility.BaseDriver;
 import Utility.MyFunc;
 import org.junit.Assert;
@@ -14,118 +15,146 @@ public class Tests extends BaseDriver {
     public void Test1RegisterPositive() {
 
         driver.get("https://demowebshop.tricentis.com/");
-        WebElement register= driver.findElement(By.xpath("//a[text()='Register']"));
-        Actions aksiyonlar=new Actions(driver);
+        WebElement register = driver.findElement(By.xpath("//a[text()='Register']"));
+        Actions aksiyonlar = new Actions(driver);
 
-        Action aksiyon=aksiyonlar.moveToElement(register).click().build();
+        Action aksiyon = aksiyonlar.moveToElement(register).click().build();
         aksiyon.perform();
         MyFunc.Bekle(2);
-        WebElement gender= driver.findElement(By.xpath("//input[@id='gender-female']"));
-        aksiyon=aksiyonlar.moveToElement(gender).click().build();
+        WebElement gender = driver.findElement(By.xpath("//input[@id='gender-female']"));
+        aksiyon = aksiyonlar.moveToElement(gender).click().build();
         aksiyon.perform();
 
         MyFunc.Bekle(2);
 
-        WebElement firstname= driver.findElement(By.xpath("//input[@id='FirstName']"));
-        aksiyon=aksiyonlar.moveToElement(firstname).click().sendKeys("Alperen").build();
+        WebElement firstname = driver.findElement(By.xpath("//input[@id='FirstName']"));
+        aksiyon = aksiyonlar.moveToElement(firstname).click().sendKeys("Alperen").build();
         aksiyon.perform();
         MyFunc.Bekle(2);
 
-        WebElement lastnname= driver.findElement(By.xpath("//input[@id='LastName']"));
-        aksiyon=aksiyonlar.moveToElement(lastnname).click().sendKeys("Demirci").build();
+        WebElement lastnname = driver.findElement(By.xpath("//input[@id='LastName']"));
+        aksiyon = aksiyonlar.moveToElement(lastnname).click().sendKeys("Demirci").build();
         aksiyon.perform();
 
-        WebElement email= driver.findElement(By.xpath("//input[@id='Email']"));
-        aksiyon=aksiyonlar.moveToElement(email).click().sendKeys("alperndemirciii@gmail.com").build();
+        WebElement email = driver.findElement(By.xpath("//input[@id='Email']"));
+        aksiyon = aksiyonlar.moveToElement(email).click().sendKeys("alperndemirciii@gmail.com").build();
         aksiyon.perform();
 
-        WebElement password=driver.findElement(By.xpath("//input[@id='Password']"));
-        aksiyon=aksiyonlar.moveToElement(password).click().sendKeys("asdasd123").build();
+        WebElement password = driver.findElement(By.xpath("//input[@id='Password']"));
+        aksiyon = aksiyonlar.moveToElement(password).click().sendKeys("asdasd123").build();
         aksiyon.perform();
 
-        WebElement confirmpass=driver.findElement(By.xpath("//input[@id='ConfirmPassword']"));
-        aksiyon=aksiyonlar.moveToElement(confirmpass).click().sendKeys("asdasd123").build();
+        WebElement confirmpass = driver.findElement(By.xpath("//input[@id='ConfirmPassword']"));
+        aksiyon = aksiyonlar.moveToElement(confirmpass).click().sendKeys("asdasd123").build();
         aksiyon.perform();
 
-        WebElement registerbtn=driver.findElement(By.xpath("//input[@id='register-button']"));
-        aksiyon=aksiyonlar.moveToElement(registerbtn).click().build();
+        WebElement registerbtn = driver.findElement(By.xpath("//input[@id='register-button']"));
+        aksiyon = aksiyonlar.moveToElement(registerbtn).click().build();
         aksiyon.perform();
 
 
-        WebElement success=driver.findElement(By.xpath("//*[@class='result']"));
-        Assert.assertTrue("Başarılı",success.isDisplayed());
+        WebElement success = driver.findElement(By.xpath("//*[@class='result']"));
+        Assert.assertTrue("Başarılı", success.isDisplayed());
 
 
     }
-    @Test public void Test1RegisterNegative(){
+
+    @Test
+    public void Test1RegisterNegative() {
 
 
         driver.get("https://demowebshop.tricentis.com/");
-        WebElement register= driver.findElement(By.xpath("//a[text()='Register']"));
-        Actions aksiyonlar=new Actions(driver);
+        WebElement register = driver.findElement(By.xpath("//a[text()='Register']"));
+        Actions aksiyonlar = new Actions(driver);
 
-        Action aksiyon=aksiyonlar.moveToElement(register).click().build();
+        Action aksiyon = aksiyonlar.moveToElement(register).click().build();
         aksiyon.perform();
         MyFunc.Bekle(2);
-        WebElement gender= driver.findElement(By.xpath("//input[@id='gender-female']"));
-        aksiyon=aksiyonlar.moveToElement(gender).click().build();
+        WebElement gender = driver.findElement(By.xpath("//input[@id='gender-female']"));
+        aksiyon = aksiyonlar.moveToElement(gender).click().build();
         aksiyon.perform();
 
         MyFunc.Bekle(2);
 
-        WebElement firstname= driver.findElement(By.xpath("//input[@id='FirstName']"));
-        aksiyon=aksiyonlar.moveToElement(firstname).click().sendKeys("Alperen").build();
+        WebElement firstname = driver.findElement(By.xpath("//input[@id='FirstName']"));
+        aksiyon = aksiyonlar.moveToElement(firstname).click().sendKeys("Alperen").build();
         aksiyon.perform();
         MyFunc.Bekle(2);
 
-        WebElement lastnname= driver.findElement(By.xpath("//input[@id='LastName']"));
-        aksiyon=aksiyonlar.moveToElement(lastnname).click().sendKeys("Demirci").build();
+        WebElement lastnname = driver.findElement(By.xpath("//input[@id='LastName']"));
+        aksiyon = aksiyonlar.moveToElement(lastnname).click().sendKeys("Demirci").build();
         aksiyon.perform();
 
-        WebElement email= driver.findElement(By.xpath("//input[@id='Email']"));
-        aksiyon=aksiyonlar.moveToElement(email).click().sendKeys("alperndemirciii@gmail.com").build();
+        WebElement email = driver.findElement(By.xpath("//input[@id='Email']"));
+        aksiyon = aksiyonlar.moveToElement(email).click().sendKeys("alperndemirciii@gmail.com").build();
         aksiyon.perform();
 
-        WebElement password=driver.findElement(By.xpath("//input[@id='Password']"));
-        aksiyon=aksiyonlar.moveToElement(password).click().sendKeys("asdasd123").build();
+        WebElement password = driver.findElement(By.xpath("//input[@id='Password']"));
+        aksiyon = aksiyonlar.moveToElement(password).click().sendKeys("asdasd123").build();
         aksiyon.perform();
 
-        WebElement confirmpass=driver.findElement(By.xpath("//input[@id='ConfirmPassword']"));
-        aksiyon=aksiyonlar.moveToElement(confirmpass).click().sendKeys("asdasd123").build();
+        WebElement confirmpass = driver.findElement(By.xpath("//input[@id='ConfirmPassword']"));
+        aksiyon = aksiyonlar.moveToElement(confirmpass).click().sendKeys("asdasd123").build();
         aksiyon.perform();
 
-        WebElement registerbtn=driver.findElement(By.xpath("//input[@id='register-button']"));
-        aksiyon=aksiyonlar.moveToElement(registerbtn).click().build();
+        WebElement registerbtn = driver.findElement(By.xpath("//input[@id='register-button']"));
+        aksiyon = aksiyonlar.moveToElement(registerbtn).click().build();
         aksiyon.perform();
 
-        WebElement error=driver.findElement(By.xpath("//div[@class='validation-summary-errors']"));
-        Assert.assertTrue("Already exists mesajı görünmedi",error.getText().contains("The specified email already exists"));
+        WebElement error = driver.findElement(By.xpath("//div[@class='validation-summary-errors']"));
+        Assert.assertTrue("Already exists mesajı görünmedi", error.getText().contains("The specified email already exists"));
     }
+
     @Test
-    public void TestLoginPositive(){
+    public void TestLoginPositive() {
         driver.get("https://demowebshop.tricentis.com/");
         WebElement login = driver.findElement(By.xpath("//a[text()='Log in']"));
-        Actions aksiyonlar=new Actions(driver);
+        Actions aksiyonlar = new Actions(driver);
 
-        Action aksiyon=aksiyonlar.moveToElement(login).click().build();
+        Action aksiyon = aksiyonlar.moveToElement(login).click().build();
         aksiyon.perform();
         MyFunc.Bekle(1);
 
         WebElement eMail = driver.findElement(By.xpath("//input[@id='Email']"));
-        aksiyon=aksiyonlar.moveToElement(eMail).click().sendKeys("alperndemirciii@gmail.com").build();
+        aksiyon = aksiyonlar.moveToElement(eMail).click().sendKeys("alperndemirciii@gmail.com").build();
         aksiyon.perform();
 
         WebElement password = driver.findElement(By.xpath("//input[@id='Password']"));
-        aksiyon=aksiyonlar.moveToElement(password).click().sendKeys("asdasd123").build();
+        aksiyon = aksiyonlar.moveToElement(password).click().sendKeys("asdasd123").build();
         aksiyon.perform();
 
         WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log in']"));
-        aksiyon=aksiyonlar.moveToElement(loginButton).click().build();
+        aksiyon = aksiyonlar.moveToElement(loginButton).click().build();
         aksiyon.perform();
 
-        WebElement logout=driver.findElement(By.xpath("//*[@class='ico-logout']"));
-        Assert.assertTrue("Giriş Başarısız",logout.isDisplayed());
+        WebElement logout = driver.findElement(By.xpath("//*[@class='ico-logout']"));
+        Assert.assertTrue("Giriş Başarısız", logout.isDisplayed());
 
     }
 
+    @Test
+    public void TestLoginNegavite() {
+        driver.get("https://demowebshop.tricentis.com/");
+        WebElement login = driver.findElement(By.xpath("//a[text()='Log in']"));
+        Actions aksiyonlar = new Actions(driver);
+
+        Action aksiyon = aksiyonlar.moveToElement(login).click().build();
+        aksiyon.perform();
+        MyFunc.Bekle(1);
+
+        WebElement eMail = driver.findElement(By.xpath("//input[@id='Email']"));
+        aksiyon = aksiyonlar.moveToElement(eMail).click().sendKeys("alpeasdasrndemirciii@gmail.com").build();
+        aksiyon.perform();
+
+        WebElement password = driver.findElement(By.xpath("//input[@id='Password']"));
+        aksiyon = aksiyonlar.moveToElement(password).click().sendKeys("asdasd123").build();
+        aksiyon.perform();
+
+        WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log in']"));
+        aksiyon = aksiyonlar.moveToElement(loginButton).click().build();
+        aksiyon.perform();
+
+        WebElement failedlogin=driver.findElement(By.xpath("//div[@class='validation-summary-errors']"));
+        Assert.assertTrue("Login hatası oluşmadı",failedlogin.getText().contains("Login was unsuccessful. Please correct the errors and try again."));
+    }
 }

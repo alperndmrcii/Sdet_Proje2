@@ -99,6 +99,6 @@ public class Tests extends BaseDriver {
         aksiyon.perform();
 
         WebElement error=driver.findElement(By.xpath("//div[@class='validation-summary-errors']"));
-        Assert.assertTrue("Bu mail zaten var",error.getText().contains("The specified email already exists"));
+        Assert.assertTrue("Already exists mesajı görünmedi",error.getText().contains("The specified email already exists"));
     }
 }

@@ -11,7 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 public class Tests extends BaseDriver {
 
     @Test
-    public void Test1() {
+    public void Test1RegisterPositive() {
 
         driver.get("https://demowebshop.tricentis.com/");
         WebElement register= driver.findElement(By.xpath("//a[text()='Register']"));
@@ -57,7 +57,7 @@ public class Tests extends BaseDriver {
 
 
     }
-    @Test public void Test2(){
+    @Test public void Test1RegisterNegative(){
 
 
         driver.get("https://demowebshop.tricentis.com/");
@@ -101,4 +101,31 @@ public class Tests extends BaseDriver {
         WebElement error=driver.findElement(By.xpath("//div[@class='validation-summary-errors']"));
         Assert.assertTrue("Already exists mesajı görünmedi",error.getText().contains("The specified email already exists"));
     }
+    @Test
+    public void TestLoginPositive(){
+        driver.get("https://demowebshop.tricentis.com/");
+        WebElement login = driver.findElement(By.xpath("//a[text()='Log in']"));
+        Actions aksiyonlar=new Actions(driver);
+
+        Action aksiyon=aksiyonlar.moveToElement(login).click().build();
+        aksiyon.perform();
+        MyFunc.Bekle(1);
+
+        WebElement eMail = driver.findElement(By.xpath("//input[@id='Email']"));
+        aksiyon=aksiyonlar.moveToElement(eMail).click().sendKeys("alperndemirciii@gmail.com").build();
+        aksiyon.perform();
+
+        WebElement password = driver.findElement(By.xpath("//input[@id='Password']"));
+        aksiyon=aksiyonlar.moveToElement(password).click().sendKeys("asdasd123").build();
+        aksiyon.perform();
+
+        WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log in']"));
+        aksiyon=aksiyonlar.moveToElement(loginButton).click().build();
+        aksiyon.perform();
+
+        WebElement logout=driver.findElement(By.xpath("//*[@class='ico-logout']"));
+        Assert.assertTrue("Giriş Başarısız",logout.isDisplayed());
+
+    }
+
 }
